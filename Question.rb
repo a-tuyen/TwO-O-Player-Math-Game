@@ -3,6 +3,7 @@ class Question
   def initialize
     @num1 = rand(1..30)
     @num2 = rand(1..30)
+
   end
 
   def ask_question
@@ -14,3 +15,4 @@ class Question
   end
 
 end
+

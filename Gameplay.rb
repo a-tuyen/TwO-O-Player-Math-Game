@@ -18,11 +18,15 @@ class Gameplay
     while(@player1.lives > 0 && @player2.lives > 0)
       self.change_players
 
+      # use print here instead of puts so it prints the question in same line as this message
       print "#{@current_player.name}: "
 
-      new_question = Question.new
+      # sets up new question
+      new_question = Question.new 
 
+      # asks the question
       current_player_question = new_question.ask_question
+      # sets up the question's answer
       current_answer = new_question.answer
       answer = gets.chomp
 
@@ -37,6 +41,7 @@ class Gameplay
 
       puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name}: #{@player2.lives}/3"
 
+      # need this if because it will show NEW TURN even if one of the players has reached 0, right before game over message
       if (@player1.lives > 0 && @player2.lives > 0)
         puts "--- NEW TURN ---"
       end
